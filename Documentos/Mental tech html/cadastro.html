@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar conta — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="card-page">
+  <div class="form-card">
+    <h1>Crie sua conta</h1>
+    <p class="subtitle">Tenha acesso a conteúdos, profissionais e recursos de apoio.</p>
+
+    <!--
+      TODO (backend): submit to registration endpoint, e.g. POST /api/auth/register
+      Fields map to a "users" table: full_name, email, birth_date, password_hash.
+      Validate password === password_confirm and terms_accepted before insert.
+    -->
+    <form action="/api/auth/register" method="POST" autocomplete="on">
+      <div class="form-group">
+        <label for="full_name">Nome completo</label>
+        <input type="text" id="full_name" name="full_name" placeholder="Seu nome completo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="birth_date">Data de nascimento</label>
+        <input type="date" id="birth_date" name="birth_date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password_confirm">Confirmar senha</label>
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="Repita a senha" minlength="8" required>
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" name="terms_accepted" required>
+        <span>Li e concordo com os <a href="termos.html">termos de uso</a> e <a href="privacidade.html">política de privacidade</a>.</span>
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-block">Criar conta</button>
+    </form>
+
+    <p class="form-footnote">Já possui uma conta? <a href="login.html">Entrar</a></p>
+  </div>
+</main>
+
+</body>
+</html>

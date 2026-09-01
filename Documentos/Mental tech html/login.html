@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-page">
+
+  <div class="auth-side">
+    <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+    <span class="logo-text">mental <span>tech</span></span>
+
+    <div class="chat-mock small">
+      <div class="bubble bubble-in">💬 Hoje quero conversar sobre ansiedade...</div>
+      <div class="bubble bubble-out">Estou aqui. Pode começar! 🌱</div>
+    </div>
+
+    <p class="quote">"Cuidar da saúde mental é um ato de coragem e amor-próprio."</p>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-form-wrap">
+      <a href="selecionar-perfil.html" class="back-link">← Voltar</a>
+      <h1>Bem-vindo de volta</h1>
+      <p>Entre na sua conta para continuar.</p>
+
+      <!--
+        TODO (backend): submit to authentication endpoint, e.g. POST /api/auth/login
+        Expect a JSON response with a session token / cookie on success.
+      -->
+      <form action="/api/auth/login" method="POST" autocomplete="on">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <a href="recuperar-senha.html" class="forgot-link">Esqueci minha senha</a>
+
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+
+      <p class="form-footnote">Ainda não possui conta? <a href="cadastro.html">Criar conta</a></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

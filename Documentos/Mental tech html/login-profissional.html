@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área profissional — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-page">
+
+  <div class="auth-side">
+    <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+    <span class="logo-text">mental <span>tech</span></span>
+
+    <div class="avatar-badge">👩‍⚕️</div>
+    <h2>Área Profissional</h2>
+    <p class="lede">Gerencie seus atendimentos, pacientes e agenda em um só lugar.</p>
+
+    <div class="pill-row">
+      <span class="pill">✓ Agenda integrada</span>
+      <span class="pill">✓ Chat com pacientes</span>
+      <span class="pill">✓ Perfil profissional</span>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-form-wrap">
+      <a href="selecionar-perfil.html" class="back-link">← Voltar</a>
+      <h1>Bem-vindo, profissional</h1>
+      <p>Acesse seu painel de atendimentos.</p>
+
+      <!--
+        TODO (backend): submit to professional authentication endpoint, e.g. POST /api/auth/professional/login
+        Server should check the account's CRP verification status before granting dashboard access.
+      -->
+      <form action="/api/auth/professional/login" method="POST" autocomplete="on">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <a href="recuperar-senha.html" class="forgot-link">Esqueci minha senha</a>
+
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+      </form>
+
+      <p class="form-footnote">Ainda não possui cadastro? <a href="cadastro-profissional.html">Criar conta profissional</a></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

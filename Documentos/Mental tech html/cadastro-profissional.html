@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro profissional — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="card-page">
+  <div class="form-card">
+    <span class="tag">Cadastro profissional</span>
+    <h1>Crie sua conta profissional</h1>
+    <p class="subtitle">Comece a atender pacientes na plataforma Acolhe.</p>
+
+    <!--
+      TODO (backend): submit to endpoint POST /api/auth/professional/register
+      Fields map to a "professionals" table: full_name, email, crp_number, specialty,
+      password_hash, verification_status (default "pending").
+      The CRP number should be checked against the Conselho Federal de Psicologia registry
+      before verification_status is set to "approved"; notify by e-mail either way.
+    -->
+    <form action="/api/auth/professional/register" method="POST" autocomplete="on">
+      <div class="form-group">
+        <label for="full_name">Nome completo</label>
+        <input type="text" id="full_name" name="full_name" placeholder="Dr(a). Seu Nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail profissional</label>
+        <input type="email" id="email" name="email" placeholder="profissional@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="crp_number">CRP (Conselho Regional de Psicologia)</label>
+        <input type="text" id="crp_number" name="crp_number" placeholder="Ex: SP/00000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="specialty">Especialidade principal</label>
+        <select id="specialty" name="specialty" required>
+          <option value="" selected disabled>Selecione sua especialidade</option>
+          <option value="clinica">Psicologia Clínica</option>
+          <option value="infantil">Psicologia Infantil</option>
+          <option value="cognitivo_comportamental">Terapia Cognitivo-Comportamental</option>
+          <option value="familiar">Terapia Familiar e de Casal</option>
+          <option value="neuropsicologia">Neuropsicologia</option>
+          <option value="organizacional">Psicologia Organizacional</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password_confirm">Confirmar senha</label>
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="Repita a senha" minlength="8" required>
+      </div>
+
+      <div class="warning-box">
+        <span>⚠</span>
+        <span>Seu CRP será verificado antes de sua conta ser aprovada. Você receberá uma confirmação por e-mail.</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Criar conta profissional</button>
+    </form>
+
+    <p class="form-footnote">Já possui uma conta? <a href="login-profissional.html">Entrar</a></p>
+  </div>
+</main>
+
+</body>
+</html>
