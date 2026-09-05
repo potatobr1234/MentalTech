@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidade — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental <span>tech</span></span>
+    </a>
+    <div class="nav-actions">
+      <a href="selecionar-perfil.html" class="btn btn-nav">Entrar</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="menu-panel" id="mainMenu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="conteudos.html">Conteúdos</a></li>
+      <li><a href="psicologos.html">Psicólogos</a></li>
+      <li><a href="sobre.html">Sobre nós</a></li>
+      <li><a href="mapa-do-site.html">Mapa do site</a></li>
+      <li><a href="privacidade.html" class="active">Privacidade</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="privacy-page container">
+
+  <section class="privacy-section">
+    <h1>Dados Coletados</h1>
+
+    <p>Coletamos diferentes tipos de dados para viabilizar o funcionamento da plataforma sendo:</p>
+
+    <p><strong>Dados de jovens (pacientes):</strong></p>
+    <p class="bullet">• Nome completo, e-mail, senha e data de nascimento — coleta obrigatória para criar e manter sua conta, permitir o agendamento de consultas e garantir que o serviço seja adequado à sua faixa etária (14 a 24 anos). O e-mail também é utilizado para comunicações sobre a plataforma.</p>
+    <p class="bullet sub">◦ Telefone — coleta opcional, para facilitar contatos emergenciais ou recuperar a conta</p>
+
+    <p><strong>Dados de psicólogos (profissionais):</strong></p>
+    <p class="bullet">• Nome completo, e-mail, senha, data de nascimento e número do CRP (Conselho Regional de Psicologia) — coleta obrigatória para validar sua identidade profissional, garantir que apenas psicólogos devidamente registrados atuem na plataforma e permitir a gestão da sua conta.</p>
+    <p class="bullet">• Telefone — coleta opcional, para contatos administrativos, emergências ou para recuperar a conta.</p>
+
+    <p><strong>Todos os dados são encriptados por segurança.</strong></p>
+
+    <p class="privacy-caps"><strong>NÃO MANTEMOS NENHUM CHAT FEITO DENTRO DA PLATAFORMA</strong></p>
+    <p class="privacy-caps"><strong>TODAS AS CONVERSAS FEITAS NO SITE SÃO DELETADAS APÓS SEREM FECHADAS</strong></p>
+  </section>
+
+  <section class="privacy-section">
+    <h1>Acesso aos dados</h1>
+    <p>Apenas os administradores do sistema têm acesso aos dados pessoais armazenados. Eles são responsáveis pela gestão da plataforma, pela manutenção da segurança e pelo suporte aos usuários. Os dados não são compartilhados com terceiros, exceto quando exigido por lei ou para cumprimento de obrigações legais.</p>
+  </section>
+
+  <!--
+    TODO (backend): the data-collection categories described above should stay in sync
+    with the actual "users" and "professionals" table schemas. If new fields are added
+    to either table, update this page accordingly.
+  -->
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="conteudos.html">Conteúdos</a></li>
+          <li><a href="psicologos.html">Encontrar psicólogo</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Profissionais</h4>
+        <ul>
+          <li><a href="login-profissional.html">Área do psicólogo</a></li>
+          <li><a href="cadastro-profissional.html">Cadastro profissional</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-disclaimer">⚠ Este projeto tem finalidade informativa e não substitui avaliação ou acompanhamento de profissionais de saúde. A triagem e os conteúdos disponibilizados não constituem diagnóstico, tratamento ou prescrição médica.</p>
+    <p class="footer-copy">© 2026 Acolhe · Projeto acadêmico</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

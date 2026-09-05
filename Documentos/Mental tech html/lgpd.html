@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre nós — Mental Tech</title>
+<title>LGPD — Mental Tech</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,36 +26,45 @@
       <li><a href="index.html">Início</a></li>
       <li><a href="conteudos.html">Conteúdos</a></li>
       <li><a href="psicologos.html">Psicólogos</a></li>
-      <li><a href="sobre.html" class="active">Sobre nós</a></li>
+      <li><a href="sobre.html">Sobre nós</a></li>
       <li><a href="mapa-do-site.html">Mapa do site</a></li>
-      <li><a href="lgpd.html">LGPD</a></li>
+      <li><a href="lgpd.html" class="active">LGPD</a></li>
     </ul>
   </div>
 </header>
 
-<main class="about-page container">
-  <div class="about-block">
-    <h2>Nosso Propósito</h2>
-    <p>Acreditamos que nenhum jovem deveria enfrentar sozinho o peso da ansiedade, da depressão ou do esgotamento emocional, especialmente quando o Brasil lidera os rankings mundiais desses transtornos.</p>
-    <p>Fazemos o que fazemos porque sabemos que, por trás de cada estatística, existe uma vida que pode ser transformada quando encontra acolhimento no momento certo.</p>
-    <p>Nosso propósito é devolver aos jovens a coragem de pedir ajuda, desconstruindo o estigma que ainda cerca a saúde mental e transformando a busca por um apoio em um ato natural, simples e acessível.</p>
-  </div>
+<main class="privacy-page container">
 
-  <div class="about-block">
-    <h2>Nossa Missão</h2>
-    <p>Facilitar o acesso de jovens entre 14 e 24 anos ao cuidado psicológico profissional, por meio de uma plataforma digital intuitiva, segura e acolhedora, que elimine as barreiras do estigma, da burocracia e da falta de informação.</p>
-  </div>
+  <section class="privacy-section">
+    <h1>Dados Coletados</h1>
 
-  <div class="about-block">
-    <h2>Nossa Visão</h2>
-    <p>Ser a principal referência em acolhimento e acesso à saúde mental para jovens no Brasil, consolidando uma rede nacional de psicólogos parceiros, escolas e clínicas engajadas na prevenção do sofrimento psíquico até 2030.</p>
-    <p>Queremos construir um futuro onde:</p>
-    <ul>
-      <li>Todo jovem saiba que pedir ajuda é um ato de coragem, não de fraqueza;</li>
-      <li>Toda família se sinta preparada para identificar sinais precoces de adoecimento mental;</li>
-      <li>A saúde mental seja tratada com a mesma urgência e seriedade da saúde física.</li>
-    </ul>
-  </div>
+    <p>Coletamos diferentes tipos de dados para viabilizar o funcionamento da plataforma sendo:</p>
+
+    <p><strong>Dados de jovens (pacientes):</strong></p>
+    <p class="bullet">• Nome completo, e-mail, senha e data de nascimento — coleta obrigatória para criar e manter sua conta, permitir o agendamento de consultas e garantir que o serviço seja adequado à sua faixa etária (14 a 24 anos). O e-mail também é utilizado para comunicações sobre a plataforma.</p>
+    <p class="bullet sub">◦ Telefone — coleta opcional, para facilitar contatos emergenciais ou recuperar a conta</p>
+
+    <p><strong>Dados de psicólogos (profissionais):</strong></p>
+    <p class="bullet">• Nome completo, e-mail, senha, data de nascimento e número do CRP (Conselho Regional de Psicologia) — coleta obrigatória para validar sua identidade profissional, garantir que apenas psicólogos devidamente registrados atuem na plataforma e permitir a gestão da sua conta.</p>
+    <p class="bullet">• Telefone — coleta opcional, para contatos administrativos, emergências ou para recuperar a conta.</p>
+
+    <p><strong>Todos os dados são encriptados por segurança.</strong></p>
+
+    <p class="privacy-caps"><strong>NÃO MANTEMOS NENHUM CHAT FEITO DENTRO DA PLATAFORMA</strong></p>
+    <p class="privacy-caps"><strong>TODAS AS CONVERSAS FEITAS NO SITE SÃO DELETADAS APÓS SEREM FECHADAS</strong></p>
+  </section>
+
+  <section class="privacy-section">
+    <h1>Acesso aos dados</h1>
+    <p>Apenas os administradores do sistema têm acesso aos dados pessoais armazenados. Eles são responsáveis pela gestão da plataforma, pela manutenção da segurança e pelo suporte aos usuários. Os dados não são compartilhados com terceiros, exceto quando exigido por lei ou para cumprimento de obrigações legais.</p>
+  </section>
+
+  <!--
+    TODO (backend): the data-collection categories described above should stay in sync
+    with the actual "users" and "professionals" table schemas. If new fields are added
+    to either table, update this page accordingly.
+  -->
+
 </main>
 
 <footer class="site-footer">

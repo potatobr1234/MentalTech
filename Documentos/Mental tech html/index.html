@@ -14,17 +14,23 @@
       <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
       <span class="logo-text">Mental <span>tech</span></span>
     </a>
-    <ul class="nav-links">
+    <div class="nav-actions">
+      <a href="selecionar-perfil.html" class="btn btn-nav">Entrar</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="menu-panel" id="mainMenu">
+    <ul>
       <li><a href="index.html" class="active">Início</a></li>
       <li><a href="conteudos.html">Conteúdos</a></li>
       <li><a href="psicologos.html">Psicólogos</a></li>
       <li><a href="sobre.html">Sobre nós</a></li>
       <li><a href="mapa-do-site.html">Mapa do site</a></li>
+      <li><a href="lgpd.html">LGPD</a></li>
     </ul>
-    <div class="nav-actions">
-      <a href="selecionar-perfil.html" class="btn btn-nav">Entrar</a>
-    </div>
-  </nav>
+  </div>
 </header>
 
 <section class="hero">
@@ -89,11 +95,19 @@
           <li><a href="cadastro-profissional.html">Cadastro profissional</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="mapa-do-site.html">Mapa do site</a></li>
+          <li><a href="lgpd.html">LGPD</a></li>
+        </ul>
+      </div>
     </div>
     <p class="footer-disclaimer">⚠ Este projeto tem finalidade informativa e não substitui avaliação ou acompanhamento de profissionais de saúde. A triagem e os conteúdos disponibilizados não constituem diagnóstico, tratamento ou prescrição médica.</p>
     <p class="footer-copy">© 2026 Acolhe · Projeto acadêmico</p>
   </div>
 </footer>
 
+<script src="js/main.js" defer></script>
 </body>
 </html>
