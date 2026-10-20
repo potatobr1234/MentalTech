@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agende sua consulta — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental <span>tech</span></span>
+    </a>
+    <div class="nav-actions app-actions">
+      <button type="button" class="icon-btn" aria-label="Notificações">
+        🔔<span class="dot"></span>
+      </button>
+      <div class="user-chip">
+        <span class="avatar-circle sm">🙂</span>
+        <span class="user-meta">
+          <span class="user-name" data-session-name>Minha conta</span>
+          <span class="user-role" data-session-role>—</span>
+        </span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="menu-panel" id="mainMenu">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="conteudos.html">Conteúdos</a></li>
+      <li><a href="psicologos.html" class="active">Psicólogos</a></li>
+      <li><a href="dashboard.html">Meu painel</a></li>
+      <li><a href="sobre.html">Sobre nós</a></li>
+      <li><a href="mapa-do-site.html">Mapa do site</a></li>
+      <li><a href="lgpd.html">LGPD</a></li>
+      <li><a href="/api/auth/logout" class="logout">Sair</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="booking-page">
+  <div class="container" style="max-width: 640px;">
+
+    <a href="psicologos.html" class="back-link">← Voltar</a>
+    <h1>Agende sua consulta</h1>
+
+    <div class="form-alert" data-form-alert></div>
+
+    <div class="booking-card">
+      <div class="mini-pro" data-psicologo-summary>
+        <span class="avatar-circle">🧑‍⚕️</span>
+        <div>
+          <strong data-field="full_name">—</strong>
+          <span data-field="specialties">Selecione um profissional na lista para agendar</span>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      TODO (backend): submit to POST /api/consultas with
+      { psicologo_id, data: "YYYY-MM-DD", horario: "HH:MM" }.
+      Os campos ocultos "psicologo_id"/"data"/"horario" abaixo começam vazios
+      de propósito — devem ser preenchidos a partir do profissional escolhido
+      em psicologos.html/perfil-psicologo.html e dos horários retornados por
+      GET /api/psicologos/:id/horarios.
+      On success, redirect to agendamento-confirmado.html (or render it
+      server-side) using the returned confirmation data.
+    -->
+    <form action="/api/consultas" method="POST" id="bookingForm">
+      <input type="hidden" name="psicologo_id" value="" data-selected-psicologo>
+      <input type="hidden" name="data" value="" data-selected-date>
+      <input type="hidden" name="horario" value="" data-selected-time>
+
+      <div class="booking-card">
+        <h3 data-field="month-label">Datas disponíveis</h3>
+        <div class="calendar-strip" data-field="calendar-strip">
+          <!-- TODO (backend): renderizar um <button class="day-btn" data-day-btn data-date="YYYY-MM-DD">
+               por dia disponível, a partir do profissional selecionado -->
+        </div>
+        <p class="slot-note" data-field="calendar-empty">Nenhuma data disponível no momento.</p>
+      </div>
+
+      <div class="booking-card">
+        <h3>Horários disponíveis</h3>
+        <div class="slot-grid" data-field="slot-grid">
+          <!-- TODO (backend): renderizar um <button class="slot-btn" data-slot-btn data-time="HH:MM">
+               por horário disponível na data escolhida -->
+        </div>
+        <p class="slot-note" data-field="slot-empty">Selecione uma data para ver os horários.</p>
+      </div>
+
+      <div class="booking-submit-wrap">
+        <button type="submit" class="btn btn-primary btn-block" data-confirm-btn disabled>Selecione um horário</button>
+      </div>
+    </form>
+
+  </div>
+</main>
+
+<script src="js/main.js" defer></script>
+<script src="js/session.js" defer></script>
+<script src="js/auth-messages.js" defer></script>
+<script src="js/booking.js" defer></script>
+</body>
+</html>

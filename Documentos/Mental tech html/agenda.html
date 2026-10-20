@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="app-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental tech</span>
+    </a>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><span class="ic">🏠</span> Dashboard</a></li>
+      <li><a href="agenda.html" class="active"><span class="ic">📅</span> Agenda</a></li>
+      <li><a href="configuracoes.html"><span class="ic">⚙️</span> Configurações</a></li>
+    </ul>
+    <a href="/api/auth/logout" class="sidebar-logout"><span class="ic">🚪</span> Sair</a>
+  </aside>
+
+  <div class="app-main">
+
+    <header class="app-topbar">
+      <div class="topbar-title">
+        <h1>Agenda</h1>
+        <p data-field="agenda-period">—</p>
+      </div>
+      <div class="app-actions">
+        <button type="button" class="icon-btn" aria-label="Notificações">
+          🔔<span class="dot"></span>
+        </button>
+        <div class="user-chip">
+          <span class="avatar-circle sm">🙂</span>
+          <span class="user-meta">
+            <span class="user-name" data-session-name>Minha conta</span>
+            <span class="user-role" data-session-role>—</span>
+          </span>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="agendaMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="menu-panel" id="agendaMenu">
+      <ul>
+        <li><a href="configuracoes.html">Meu perfil</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="/api/auth/logout" class="logout">Sair</a></li>
+      </ul>
+    </div>
+
+    <!--
+      TODO (backend): render the grid from GET /api/agenda?view=semana&data=YYYY-MM-DD
+      Both the header row (dias da semana) e cada célula de consulta devem
+      vir da resposta da API — os valores abaixo são só o esqueleto da
+      tabela, sem nenhuma consulta "salva" de exemplo.
+    -->
+    <div class="app-content">
+
+      <div class="agenda-toolbar">
+        <div class="view-toggle">
+          <button type="button" data-view-btn>Dia</button>
+          <button type="button" data-view-btn class="active">Semana</button>
+          <button type="button" data-view-btn>Mês</button>
+        </div>
+      </div>
+
+      <div class="calendar-table-wrap">
+        <table class="calendar-table">
+          <thead>
+            <tr data-field="agenda-header">
+              <th></th>
+              <th>Segunda</th>
+              <th>Terça</th>
+              <th>Quarta</th>
+              <th>Quinta</th>
+              <th>Sexta</th>
+            </tr>
+          </thead>
+          <tbody data-field="agenda-body">
+            <tr>
+              <td>08:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>09:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>10:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>11:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>12:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>13:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>14:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>15:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td>16:00</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="slot-note" data-field="agenda-empty">Nenhuma consulta agendada nesta semana.</p>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/session.js" defer></script>
+</body>
+</html>

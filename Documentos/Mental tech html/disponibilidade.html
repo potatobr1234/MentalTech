@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha disponibilidade — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="app-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental tech</span>
+    </a>
+    <ul class="sidebar-nav">
+      <li><a href="painel-psicologo.html"><span class="ic">🏠</span> Dashboard</a></li>
+      <li><a href="consultas.html"><span class="ic">📋</span> Consultas</a></li>
+      <li><a href="agenda-psicologo.html"><span class="ic">🗓️</span> Agenda</a></li>
+      <li><a href="pacientes.html"><span class="ic">👥</span> Pacientes</a></li>
+      <li><a href="mensagens.html"><span class="ic">💬</span> Mensagens</a></li>
+      <li><a href="disponibilidade.html" class="active"><span class="ic">🕒</span> Disponibilidade</a></li>
+      <li><a href="meu-perfil-psicologo.html"><span class="ic">👤</span> Meu perfil</a></li>
+      <li><a href="configuracoes-psicologo.html"><span class="ic">⚙️</span> Configurações</a></li>
+    </ul>
+    <a href="/api/auth/logout" class="sidebar-logout"><span class="ic">🚪</span> Sair</a>
+  </aside>
+
+  <div class="app-main">
+
+    <header class="app-topbar">
+      <div class="topbar-title"><h1>Minha disponibilidade</h1></div>
+      <div class="app-actions">
+        <button type="button" class="icon-btn" aria-label="Notificações">🔔<span class="dot"></span></button>
+        <div class="user-chip">
+          <span class="avatar-circle sm">🙂</span>
+          <span class="user-meta">
+            <span class="user-name" data-session-name>Minha conta</span>
+            <span class="user-role" data-session-role>Psicóloga</span>
+          </span>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="dispMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="menu-panel" id="dispMenu">
+      <ul>
+        <li><a href="meu-perfil-psicologo.html">Meu perfil</a></li>
+        <li><a href="configuracoes-psicologo.html">Configurações</a></li>
+        <li><a href="/api/auth/logout" class="logout">Sair</a></li>
+      </ul>
+    </div>
+
+    <div class="app-content">
+      <p class="slot-note" style="margin-bottom:18px;">Configure seus horários de atendimento semanais</p>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="panel-head"><h3>Horários semanais</h3></div>
+          <div data-field="avail-days">
+            <!-- preenchido por js/psicologo.js (um .avail-day por dia da semana) -->
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Exceções</h3></div>
+          <p class="slot-note" style="margin:0 0 14px;">Adicione datas específicas em que não estará disponível.</p>
+          <div data-field="exceptions-list">
+            <!-- preenchido por js/psicologo.js -->
+          </div>
+          <form class="exception-form" data-field="exception-form">
+            <input type="date" name="date" required>
+            <input type="text" name="reason" placeholder="Motivo (opcional)">
+            <button type="submit" class="btn btn-secondary btn-block">Adicionar exceção</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="booking-submit-wrap" style="max-width:none; margin-top:24px;">
+        <button type="button" class="btn btn-primary" data-field="save-availability">Salvar disponibilidade</button>
+        <span class="slot-note" data-field="avail-saved" style="display:none;">Disponibilidade salva ✅</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/session.js" defer></script>
+<script src="js/psicologo.js" defer></script>
+</body>
+</html>

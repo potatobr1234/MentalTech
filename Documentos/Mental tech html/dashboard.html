@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="app-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental tech</span>
+    </a>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="active"><span class="ic">🏠</span> Dashboard</a></li>
+      <li><a href="agenda.html"><span class="ic">📅</span> Agenda</a></li>
+      <li><a href="configuracoes.html"><span class="ic">⚙️</span> Configurações</a></li>
+    </ul>
+    <a href="/api/auth/logout" class="sidebar-logout"><span class="ic">🚪</span> Sair</a>
+  </aside>
+
+  <div class="app-main">
+
+    <header class="app-topbar">
+      <div class="topbar-title">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="app-actions">
+        <button type="button" class="icon-btn" aria-label="Notificações">
+          🔔<span class="dot"></span>
+        </button>
+        <div class="user-chip">
+          <span class="avatar-circle sm">🙂</span>
+          <span class="user-meta">
+            <span class="user-name" data-session-name>Minha conta</span>
+            <span class="user-role" data-session-role>—</span>
+          </span>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="dashMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="menu-panel" id="dashMenu">
+      <ul>
+        <li><a href="configuracoes.html">Meu perfil</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="/api/auth/logout" class="logout">Sair</a></li>
+      </ul>
+    </div>
+
+    <!--
+      TODO (backend): render this whole page from GET /api/dashboard,
+      which should return the next appointment, unread message count,
+      total consultations and recent activity for the logged-in user.
+      Os valores abaixo começam vazios/zerados de propósito — ainda não
+      existe nenhum psicólogo aprovado nem consulta agendada no sistema.
+    -->
+    <div class="app-content">
+
+      <div class="greeting">
+        <h2>Olá, <span data-session-first-name>você</span> 👋</h2>
+        <p>Confira seus atendimentos e atividades de hoje.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📅</div>
+          <div class="value" data-field="next-date">—</div>
+          <div class="label">Data da consulta</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🕒</div>
+          <div class="value" data-field="next-time">—</div>
+          <div class="label">Horário</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💬</div>
+          <div class="value" data-field="unread-count">0</div>
+          <div class="label">Mensagens não lidas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="value" data-field="total-consultations">0</div>
+          <div class="label">Total de consultas feitas</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Próximos atendimento</h3>
+            <a href="agenda.html">Ver todos</a>
+          </div>
+          <div data-field="next-appointment">
+            <!-- TODO (backend): renderizar aqui um .appt-row por consulta futura, a partir de GET /api/dashboard -->
+          </div>
+          <p class="slot-note" data-field="next-appointment-empty">Nenhuma consulta agendada ainda.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Atividade recente</h3>
+          </div>
+          <ul class="activity-list" data-field="activity-list">
+            <!-- TODO (backend): renderizar aqui um <li class="activity-item"> por evento, a partir de GET /api/dashboard -->
+          </ul>
+          <p class="slot-note" data-field="activity-empty">Nenhuma atividade recente.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/session.js" defer></script>
+</body>
+</html>

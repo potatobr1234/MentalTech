@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configurações — Mental Tech</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="app-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <img src="assets/logo.svg" alt="Mental Tech" class="logo-mark">
+      <span class="logo-text">Mental tech</span>
+    </a>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><span class="ic">🏠</span> Dashboard</a></li>
+      <li><a href="agenda.html"><span class="ic">📅</span> Agenda</a></li>
+      <li><a href="configuracoes.html" class="active"><span class="ic">⚙️</span> Configurações</a></li>
+    </ul>
+    <a href="/api/auth/logout" class="sidebar-logout"><span class="ic">🚪</span> Sair</a>
+  </aside>
+
+  <div class="app-main">
+
+    <header class="app-topbar">
+      <div class="topbar-title">
+        <h1>Configurações</h1>
+      </div>
+      <div class="app-actions">
+        <button type="button" class="icon-btn" aria-label="Notificações">
+          🔔<span class="dot"></span>
+        </button>
+        <div class="user-chip">
+          <span class="avatar-circle sm">🙂</span>
+          <span class="user-meta">
+            <span class="user-name" data-session-name>Minha conta</span>
+            <span class="user-role" data-session-role>—</span>
+          </span>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="settingsMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="menu-panel" id="settingsMenu">
+      <ul>
+        <li><a href="dashboard.html">Meu painel</a></li>
+        <li><a href="/api/auth/logout" class="logout">Sair</a></li>
+      </ul>
+    </div>
+
+    <div class="app-content">
+      <div class="settings-page">
+        <p class="subtitle">Gerencie sua conta e preferências</p>
+
+        <a href="/api/auth/logout" class="danger-btn">Sair da conta</a>
+
+        <!--
+          TODO (backend): submit to PATCH /api/usuarios/me on save.
+          Notification toggles map to boolean fields on the user's
+          preferences (notify_messages, notify_cancellations, notify_reminders).
+          Only send password fields to the endpoint if both are filled and match.
+        -->
+        <form action="/api/usuarios/me" method="POST">
+
+          <div class="settings-card">
+            <h3>Notificações</h3>
+            <div class="settings-row">
+              <span class="row-label">Novas mensagens</span>
+              <label class="switch">
+                <input type="checkbox" name="notify_messages" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="settings-row">
+              <span class="row-label">Cancelamentos</span>
+              <label class="switch">
+                <input type="checkbox" name="notify_cancellations" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="settings-row">
+              <span class="row-label">Lembretes de consulta</span>
+              <label class="switch">
+                <input type="checkbox" name="notify_reminders" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3>Conta</h3>
+            <div class="form-group">
+              <label for="full_name">Nome completo</label>
+              <input type="text" id="full_name" name="full_name" data-session-fill="full_name">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" data-session-fill="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Nova senha</label>
+              <input type="password" id="password" name="password" placeholder="Digite nova senha" minlength="8">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="password_confirm">Confirmar nova senha</label>
+              <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirme a nova senha" minlength="8">
+            </div>
+          </div>
+
+          <div class="settings-card">
+            <h3>Segurança</h3>
+            <div class="settings-row">
+              <div>
+                <span class="row-label">Autenticação de dois fatores</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" name="two_factor_enabled" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="settings-row">
+              <div>
+                <span class="row-label">Número de celular vinculado</span>
+              </div>
+              <!-- TODO (backend): preencher a partir de GET /api/usuarios/me; ficará
+                   mascarado/somente-leitura até o usuário passar por um fluxo
+                   de troca de número. Começa vazio pois ninguém cadastrou telefone ainda. -->
+              <input type="text" value="" placeholder="Nenhum número cadastrado" disabled style="max-width: 160px; padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg); color: var(--text-muted); text-align: right;">
+            </div>
+            <div class="settings-row">
+              <span class="row-label">Notificação de tentativas de login</span>
+              <label class="switch">
+                <input type="checkbox" name="notify_login_attempts" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Salvar e voltar ao perfil</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/session.js" defer></script>
+</body>
+</html>
